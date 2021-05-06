@@ -34,7 +34,7 @@ const Old = () => {
     <div>
       Old
       <div className='container'>
-        <div>What is your gender?</div>
+        <div>How old are you?</div>
 
         <div className='container_main'>
           <form onSubmit={handleSubmit}>

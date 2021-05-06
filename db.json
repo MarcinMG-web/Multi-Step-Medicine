@@ -96,86 +96,81 @@
     },
     {
       "id": 9,
-      "type": "60+",
-      "completed": false
-    },
-    {
-      "id": 10,
       "type": "sex life",
       "completed": false
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "phobia",
       "completed": false
     },
     {
-      "id": 12,
+      "id": 11,
       "type": "social phobia",
       "completed": false
     },
     {
-      "id": 13,
+      "id": 12,
       "type": "mobbing",
       "completed": false
     },
     {
-      "id": 14,
+      "id": 13,
       "type": "abortion",
       "completed": false
     },
     {
-      "id": 15,
+      "id": 14,
       "type": "agression",
       "completed": false
     },
     {
-      "id": 16,
+      "id": 15,
       "type": "anorexia",
       "completed": false
     },
     {
-      "id": 17,
+      "id": 16,
       "type": "panic attacks",
       "completed": false
     },
     {
-      "id": 18,
+      "id": 17,
       "type": "self-agression",
       "completed": false
     },
     {
-      "id": 19,
+      "id": 18,
       "type": "bulimia",
       "completed": false
     },
     {
-      "id": 20,
+      "id": 19,
       "type": "affective disase",
       "completed": false
     },
     {
-      "id": 21,
+      "id": 20,
       "type": "bipolar",
       "completed": false
     },
     {
-      "id": 22,
+      "id": 21,
       "type": "depression",
       "completed": false
     },
     {
-      "id": 23,
+      "id": 22,
       "type": "dysthymia",
       "completed": false
     },
     {
-      "id": 24,
+      "id": 23,
       "type": "violance",
       "completed": false
     },
     {
-      "id": 25,
+      "id": 24,
       "type": "schizophrenia",
       "completed": false
     }
