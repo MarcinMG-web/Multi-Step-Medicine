@@ -19,3 +19,27 @@ export const getAllGenders = async () => {
     console.log(err);
   }
 };
+
+export const getAllYears = async () => {
+  try {
+    return await api.get(`/old`).then(({ data }) => data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getAllIssue = async () => {
+  try {
+    return await api.get(`/issue`).then(({ data }) => data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getAllLanguage = async () => {
+  try {
+    return await api.get(`/language`).then(({ data }) => data);
+  } catch (err) {
+    console.log(err);
+  }
+};
