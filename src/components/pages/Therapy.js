@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { chooseTherapy } from '../redux/rootSlice';
 import { getAllTherapyQuestions } from '../services/ApiService';
 
 const Therapy = () => {
+  const dispatch = useDispatch();
   let history = useHistory();
 
-  const [questions, setQuestions] = useState([]);
+  const therapy = useSelector((state) => state.therapy);
 
+  const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
   useEffect(() => {
@@ -27,8 +31,11 @@ const Therapy = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('./gender');
+
     console.log(userSetting);
+    dispatch(chooseTherapy(userSetting));
+
+    history.push('./gender');
   };
 
   return (
@@ -46,7 +53,7 @@ const Therapy = () => {
             {questions.map((question) => (
               <div className='container_question' key={question.id}>
                 <div className='container_question-label'>
-                  <label>{question.type}</label>
+                  <label htmlFor='therapy'>{question.type}</label>
                 </div>
 
                 <div className='container_question-input'>

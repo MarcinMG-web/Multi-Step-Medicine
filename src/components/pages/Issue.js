@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
 import { getAllIssue } from '../services/ApiService';
+import { chooseIssues } from '../redux/rootSlice';
 
 const Issue = () => {
+  const dispatch = useDispatch();
   let history = useHistory();
+
+  const issue = useSelector((state) => state.issue);
+
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -26,8 +31,11 @@ const Issue = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('./language');
+
     console.log(userSetting);
+    dispatch(chooseIssues(userSetting));
+
+    history.push('./language');
   };
 
   return (

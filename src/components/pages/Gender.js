@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { chooseGender } from '../redux/rootSlice';
 import { getAllGenders } from '../services/ApiService';
 
 const Gender = () => {
   let history = useHistory();
+  const dispatch = useDispatch();
+
+  const gender = useSelector((state) => state.gender);
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -27,7 +31,10 @@ const Gender = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     history.push('./old');
+    dispatch(chooseGender(userSetting));
+
     console.log(userSetting);
   };
 
@@ -57,7 +64,7 @@ const Gender = () => {
               </div>
             ))}
             <div className='container_buttons'>
-              <Link type='submit' className='btn_back' to='./therapy'>
+              <Link type='submit' className='btn_back' to='./'>
                 Back
               </Link>
 

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { chooseLanguage } from '../redux/rootSlice';
 import { getAllLanguage } from '../services/ApiService';
 
 const Language = () => {
+  const dispatch = useDispatch();
   let history = useHistory();
+
+  const language = useSelector((state) => state.language);
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -27,8 +31,11 @@ const Language = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push('./listofTherapist');
+
     console.log(userSetting);
+    dispatch(chooseLanguage(userSetting));
+
+    history.push('./listofTherapist');
   };
 
   return (

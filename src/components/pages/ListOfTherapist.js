@@ -13,10 +13,10 @@ const ListOfTherapist = () => {
             <Link type='submit' className='btn_back' to='./language'>
               Back
             </Link>
-            <button type='submit' >
-            <Link type='submit' className='btn_next' to='./succes'>
-                 Next
-            </Link>
+            <button type='submit'>
+              <Link type='submit' className='btn_next' to='./succes'>
+                Next
+              </Link>
             </button>
           </div>
         </div>
