@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { getAllGenders } from '../services/ApiService';
 
 const Gender = () => {
+  let history = useHistory();
+
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -23,11 +25,10 @@ const Gender = () => {
     });
   };
 
-  console.log(userSetting);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // history.push('/gender');
+    history.push('./old');
+    console.log(userSetting);
   };
 
   return (
@@ -55,16 +56,16 @@ const Gender = () => {
                 </div>
               </div>
             ))}
-          </form>
-        </div>
+            <div className='container_buttons'>
+              <Link type='submit' className='btn_back' to='./therapy'>
+                Back
+              </Link>
 
-        <div className='container_buttons'>
-          <Link type='submit' className='btn_back' to='./therapy'>
-            Back
-          </Link>
-          <Link type='submit' className='btn_next' to='./old'>
-            Next
-          </Link>
+              <button type='submit' className='btn_next'>
+                Next
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

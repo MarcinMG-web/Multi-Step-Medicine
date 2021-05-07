@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { getAllYears } from '../services/ApiService';
 
 const Old = () => {
+  let history = useHistory();
+
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -23,11 +25,10 @@ const Old = () => {
     });
   };
 
-  console.log(userSetting);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // history.push('/gender');
+    history.push('./issue');
+    console.log(userSetting);
   };
 
   return (
@@ -55,18 +56,18 @@ const Old = () => {
                 </div>
               </div>
             ))}
+            <div className='container_buttons'>
+              <Link type='submit' className='btn_back' to='./gender'>
+                Back
+              </Link>
+              <button type='submit' className='btn_next'>
+                Next
+              </button>
+            </div>
           </form>
-          <p className='container_text'>If you are under 16 ask adult for help.</p>
-        </div>
-
-
-        <div className='container_buttons'>
-          <Link type='submit' className='btn_back' to='./gender'>
-            Back
-          </Link>
-          <Link type='submit' className='btn_next' to='./issue'>
-            Next
-          </Link>
+          <p className='container_text'>
+            If you are under 16 ask adult for help.
+          </p>
         </div>
       </div>
     </div>

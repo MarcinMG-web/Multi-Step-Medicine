@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { getAllLanguage } from '../services/ApiService';
 
 const Language = () => {
+  let history = useHistory();
+
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -23,18 +25,21 @@ const Language = () => {
     });
   };
 
-  console.log(userSetting);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // history.push('/gender');
+    history.push('./listofTherapist');
+    console.log(userSetting);
   };
+
   return (
     <div>
       Language
       <div className='containerLanguage'>
         <div>Language of therapy</div>
-        <p className='containerLanguage_text'>Choose at least one languageor more if you need multi-lingual therapist</p>
+        <p className='containerLanguage_text'>
+          Choose at least one languageor more if you need multi-lingual
+          therapist
+        </p>
         <div className='containerLanguage_main'>
           <form onSubmit={handleSubmit}>
             {questions.map((question) => (
@@ -54,15 +59,17 @@ const Language = () => {
                 </div>
               </div>
             ))}
+            <div className='containerLanguage_buttons'>
+              <Link type='submit' className='btn_back' to='./issue'>
+                Back
+              </Link>
+              <button type='submit' className='btn_next'>
+                {/* <Link type='submit' className='btn_next' to='./listofTherapist'> */}
+                  Next
+                {/* </Link> */}
+              </button>
+            </div>
           </form>
-        </div>
-        <div className='containerLanguage_buttons'>
-          <Link type='submit' className='btn_back' to='./issue'>
-            Back
-          </Link>
-          <Link type='submit' className='btn_next' to='./listofTherapist'>
-            Next
-          </Link>
         </div>
       </div>
     </div>

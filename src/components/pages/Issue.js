@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { getAllIssue } from '../services/ApiService';
 
 const Issue = () => {
+  let history = useHistory();
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -23,20 +24,18 @@ const Issue = () => {
     });
   };
 
-  console.log(userSetting);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // history.push('/gender');
+    history.push('./language');
+    console.log(userSetting);
   };
+
   return (
     <div>
       Issue
       <div className='containerIssue'>
         <div>What best describeswhat you are struggling with?</div>
-            <p className='containerIssue_text'>
-            Choose at last one option.
-          </p>
+        <p className='containerIssue_text'>Choose at last one option.</p>
         <div className='containerIssue_main'>
           <form onSubmit={handleSubmit}>
             {questions.map((question) => (
@@ -56,19 +55,16 @@ const Issue = () => {
                 </div>
               </div>
             ))}
-            
+            <div className='containerIssue_buttons'>
+              <Link type='submit' className='btn_back' to='./old'>
+                Back
+              </Link>
+              <button type='submit' className='btn_next'>
+                Next
+              </button>
+            </div>
           </form>
-          
         </div>
-        <div className='containerIssue_buttons'>
-          <Link type='submit' className='btn_back' to='./old'>
-            Back
-          </Link>
-          <Link type='submit' className='btn_next' to='./language'>
-            Next
-          </Link>
-        </div>
-
       </div>
     </div>
   );
