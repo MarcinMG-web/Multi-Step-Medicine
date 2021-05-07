@@ -64,9 +64,7 @@ const Language = () => {
                 Back
               </Link>
               <button type='submit' className='btn_next'>
-                {/* <Link type='submit' className='btn_next' to='./listofTherapist'> */}
-                  Next
-                {/* </Link> */}
+                Next
               </button>
             </div>
           </form>
