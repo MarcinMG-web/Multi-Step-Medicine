@@ -8,7 +8,8 @@ const Language = () => {
   const dispatch = useDispatch();
   let history = useHistory();
 
-  const language = useSelector((state) => state.language);
+ useSelector((state) => state.language)
+
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -33,20 +34,20 @@ const Language = () => {
     e.preventDefault();
 
     console.log(userSetting);
-    dispatch(chooseLanguage(userSetting));
+    dispatch(chooseLanguage([userSetting]));
 
     history.push('./listofTherapist');
   };
 
   return (
     <div>
-      Language
       <div className='containerLanguage'>
-        <div>Language of therapy</div>
-        <p className='containerLanguage_text'>
-          Choose at least one languageor more if you need multi-lingual
-          therapist
-        </p>
+        <div className='containerLanguage_text'>Language of therapy
+          <p className='containerLanguage_text-small'>
+            Choose at least one languageor more if you need multi-lingual
+            therapist
+          </p>
+        </div>
         <div className='containerLanguage_main'>
           <form onSubmit={handleSubmit}>
             {questions.map((question) => (

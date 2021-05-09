@@ -33,19 +33,20 @@ const Issue = () => {
     e.preventDefault();
 
     console.log(userSetting);
-    dispatch(chooseIssues(userSetting));
+    dispatch(chooseIssues([userSetting]));
 
     history.push('./language');
   };
 
   return (
     <div>
-      Issue
       <div className='containerIssue'>
-        <div>What best describeswhat you are struggling with?</div>
-        <p className='containerIssue_text'>Choose at last one option.</p>
+        <div className='containerIssue_text'>
+          What best describeswhat you are struggling with?
+        <p className='containerIssue_text-small'>Choose at last one option.</p>
+        </div>
         <div className='containerIssue_main'>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='containerIssue_form'>
             {questions.map((question) => (
               <div className='containerIssue_question' key={question.id}>
                 <div className='containerIssue_question-label'>

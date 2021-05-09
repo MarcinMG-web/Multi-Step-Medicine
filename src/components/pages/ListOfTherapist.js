@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {postSuccesResult} from '../services/ApiService';
 
 const ListOfTherapist = () => {
+
+
+
+
   return (
     <div>
       ListOfTherapist
@@ -13,7 +18,7 @@ const ListOfTherapist = () => {
             <Link type='submit' className='btn_back' to='./language'>
               Back
             </Link>
-            <button type='submit'>
+            <button type='submit' type='submit' className='btn_next'>
               <Link type='submit' className='btn_next' to='./succes'>
                 Next
               </Link>

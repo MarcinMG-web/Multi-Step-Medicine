@@ -33,14 +33,13 @@ const Old = () => {
     e.preventDefault();
 
     console.log(userSetting);
-    dispatch(chooseOld(userSetting));
+    dispatch(chooseOld([userSetting]));
 
     history.push('./issue');
   };
 
   return (
     <div>
-      Old
       <div className='container'>
         <div>How old are you?</div>
 

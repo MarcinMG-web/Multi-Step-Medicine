@@ -33,16 +33,14 @@ const Therapy = () => {
     e.preventDefault();
 
     console.log(userSetting);
-    dispatch(chooseTherapy(userSetting));
+    dispatch(chooseTherapy([userSetting]));
 
     history.push('./gender');
   };
 
   return (
     <div>
-      Therapy
       <div className='container'>
-        {/* Therapy*/}
 
         <div>
           What therapy or consultation <br /> are you looking for?

@@ -43,3 +43,4 @@ export const getAllLanguage = async () => {
     console.log(err);
   }
 };
+

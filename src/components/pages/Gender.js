@@ -33,14 +33,13 @@ const Gender = () => {
     e.preventDefault();
 
     history.push('./old');
-    dispatch(chooseGender(userSetting));
-
+    dispatch(chooseGender([userSetting]));
     console.log(userSetting);
+    
   };
 
   return (
     <div>
-      Gender
       <div className='container'>
         <div>What is your gender?</div>
 
