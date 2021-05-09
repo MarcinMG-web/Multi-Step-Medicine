@@ -9,12 +9,11 @@ const ListOfTherapist = () => {
 
   return (
     <div>
-      ListOfTherapist
-      <div className='containerTherapist'>
+      <div className='containerListOfTherapist'>
         <div>ListOfTherapist</div>
 
-        <div className='containerTherapist_main'>
-          <div className='containerTherapist_buttons'>
+        <div className='containerListOfTherapist_main'>
+          <div className='containerListOfTherapist_buttons'>
             <Link type='submit' className='btn_back' to='./language'>
               Back
             </Link>
