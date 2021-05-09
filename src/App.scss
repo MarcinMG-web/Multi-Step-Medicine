@@ -231,44 +231,50 @@
   }
 }
 
+.mainText{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 45px;
+}
+
 .containerListOfTherapist{
-  width: 90vw;
+  width: 60vw;
   height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background-color: #fff;
-  border: 2px solid rgb(31, 165, 228);
+  
   font-size: 16px;
   margin: 0;
   padding: 0;
 
-  &_main {
-    width: 100%;
-    height: 80%;
-    text-align: center;
-    color: black;
-    margin: 0;
-    padding: 60px;
-
-  }
-  &_buttons {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &_question {
+  &_box{
+    width: 60vw;
+    height: 150px;
+    border: 1px solid black;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+    &-foto{
+      border: 1px solid black;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    border-bottom: chocolate 1px solid;
   }
-  &_text {
-    font-size: 16px;
-  }
+ 
+
 }
