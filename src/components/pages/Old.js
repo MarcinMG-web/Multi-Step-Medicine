@@ -32,8 +32,7 @@ const Old = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(userSetting);
-    dispatch(chooseOld([userSetting]));
+    dispatch(chooseOld(userSetting));
 
     history.push('./issue');
   };

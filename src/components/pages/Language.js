@@ -8,8 +8,7 @@ const Language = () => {
   const dispatch = useDispatch();
   let history = useHistory();
 
- useSelector((state) => state.language)
-
+  useSelector((state) => state.language);
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -33,8 +32,7 @@ const Language = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(userSetting);
-    dispatch(chooseLanguage([userSetting]));
+    dispatch(chooseLanguage(userSetting));
 
     history.push('./listofTherapist');
   };
@@ -42,7 +40,8 @@ const Language = () => {
   return (
     <div>
       <div className='containerLanguage'>
-        <div className='containerLanguage_text'>Language of therapy
+        <div className='containerLanguage_text'>
+          Language of therapy
           <p className='containerLanguage_text-small'>
             Choose at least one languageor more if you need multi-lingual
             therapist

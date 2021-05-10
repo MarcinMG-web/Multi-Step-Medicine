@@ -32,8 +32,7 @@ const Issue = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(userSetting);
-    dispatch(chooseIssues([userSetting]));
+    dispatch(chooseIssues(userSetting));
 
     history.push('./language');
   };
@@ -43,7 +42,9 @@ const Issue = () => {
       <div className='containerIssue'>
         <div className='containerIssue_text'>
           What best describeswhat you are struggling with?
-        <p className='containerIssue_text-small'>Choose at last one option.</p>
+          <p className='containerIssue_text-small'>
+            Choose at last one option.
+          </p>
         </div>
         <div className='containerIssue_main'>
           <form onSubmit={handleSubmit} className='containerIssue_form'>

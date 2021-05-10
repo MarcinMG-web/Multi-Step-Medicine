@@ -32,8 +32,7 @@ const Therapy = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(userSetting);
-    dispatch(chooseTherapy([userSetting]));
+    dispatch(chooseTherapy(userSetting));
 
     history.push('./gender');
   };
