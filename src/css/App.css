@@ -7,8 +7,8 @@
   align-items: center;
   text-align: center;
   background-color: #fff;
+  border: 2px solid #1fa5e4;
   font-size: 26px;
-  border: 2px solid rgba(31, 166, 228, 0.712);
 }
 .container_main {
   width: 80%;
@@ -150,6 +150,7 @@
   height: 550px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #fff;
@@ -160,7 +161,6 @@
 .containerListOfTherapist_box {
   width: 60vw;
   height: 150px;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -170,7 +170,43 @@
   width: 150px;
   height: 150px;
 }
+.containerListOfTherapist_box-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containerListOfTherapist_box2 {
+  width: 60vw;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.containerListOfTherapist_box2-details {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.containerListOfTherapist_box2-details-option {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+.containerListOfTherapist_box2-capabilities {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  border-left: 1px solid black;
+}
 .containerListOfTherapist_buttons {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
