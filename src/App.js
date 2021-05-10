@@ -1,4 +1,4 @@
-import './App.scss';
+import './scss/App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Therapy from './components/pages/Therapy';
