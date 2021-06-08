@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { chooseOld } from '../redux/rootSlice';
-import { getAllYears } from '../services/ApiService';
+import { Link,} from 'react-router-dom';
+import { getAllLanguage } from '../services/ApiService';
 
-const Old = () => {
-  const dispatch = useDispatch();
-  let history = useHistory();
-
-  const old = useSelector((state) => state.old);
+const Language = () => {
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -18,7 +12,7 @@ const Old = () => {
   }, []);
 
   const getQuestions = async () => {
-    const dataQuestion = await getAllYears();
+    const dataQuestion = await getAllLanguage();
     setQuestions(dataQuestion);
   };
 
@@ -32,25 +26,28 @@ const Old = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(chooseOld(userSetting));
 
-    history.push('./issue');
   };
 
   return (
     <div>
-      <div className='container'>
-        <div>How old are you?</div>
-
-        <div className='container_main'>
+      <div className='containerLanguage'>
+        <div className='containerLanguage_text'>
+          Language of therapy
+          <p className='containerLanguage_text-small'>
+            Choose at least one languageor more if you need multi-lingual
+            therapist
+          </p>
+        </div>
+        <div className='containerLanguage_main'>
           <form onSubmit={handleSubmit}>
             {questions.map((question) => (
-              <div className='container_question' key={question.id}>
-                <div className='container_question-label'>
+              <div className='containerLanguage_question' key={question.id}>
+                <div className='containerLanguage_question-label'>
                   <label>{question.type}</label>
                 </div>
 
-                <div className='container_question-input'>
+                <div className='containerLanguage_question-input'>
                   <input
                     type='checkbox'
                     name={question.type}
@@ -61,22 +58,24 @@ const Old = () => {
                 </div>
               </div>
             ))}
-            <div className='container_buttons'>
-              <Link type='submit' className='btn_back' to='./gender'>
+            <div className='containerLanguage_buttons'>
+              <Link
+                type='submit'
+                to='/issue'
+                className='btn_back'
+
+              >
                 Back
               </Link>
-              <button type='submit' className='btn_next'>
+              <Link to='/succes' type='submit' className='btn_next'>
                 Next
-              </button>
+              </Link>
             </div>
           </form>
-          <p className='container_text'>
-            If you are under 16 ask adult for help.
-          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Old;
+export default Language;

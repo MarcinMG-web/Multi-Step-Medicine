@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { chooseTherapy } from '../redux/rootSlice';
-import { getAllTherapyQuestions } from '../services/ApiService';
+import { Link } from 'react-router-dom';
 
-const Therapy = () => {
-  const dispatch = useDispatch();
-  let history = useHistory();
+import { getAllYears } from '../services/ApiService';
 
-  const therapy = useSelector((state) => state.therapy);
-
+const Old = () => {
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
 
@@ -18,7 +12,7 @@ const Therapy = () => {
   }, []);
 
   const getQuestions = async () => {
-    const dataQuestion = await getAllTherapyQuestions();
+    const dataQuestion = await getAllYears();
     setQuestions(dataQuestion);
   };
 
@@ -31,26 +25,19 @@ const Therapy = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(chooseTherapy(userSetting));
-
-    history.push('./gender');
   };
 
   return (
     <div>
       <div className='container'>
-
-        <div>
-          What therapy or consultation <br /> are you looking for?
-        </div>
+        <div>How old are you?</div>
 
         <div className='container_main'>
           <form onSubmit={handleSubmit}>
             {questions.map((question) => (
               <div className='container_question' key={question.id}>
                 <div className='container_question-label'>
-                  <label htmlFor='therapy'>{question.type}</label>
+                  <label>{question.type}</label>
                 </div>
 
                 <div className='container_question-input'>
@@ -65,19 +52,21 @@ const Therapy = () => {
               </div>
             ))}
             <div className='container_buttons'>
-              <Link type='submit' className='btn_back' to='/'>
+              <Link to='./gender' type='submit' className='btn_back'>
                 Back
               </Link>
-
-              <button type='submit' className='btn_next'>
+              <Link to='./issue' type='submit' className='btn_next'>
                 Next
-              </button>
+              </Link>
             </div>
           </form>
+          <p className='container_text'>
+            If you are under 16 ask adult for help.
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Therapy;
+export default Old;

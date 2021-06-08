@@ -1,14 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useSelector} from 'react-redux';
 
 const Succes = () => {
-  const state = useSelector((state) => state);
+
+  const therapy = useSelector((state) => state.answerReducer.therapy);
 
   return (
     <div>
-      <pre>{JSON.stringify(state, null, 3)}</pre>
+      <p>therapy:{therapy}</p>
+
+      <Link to='/' className='btn_back'>
+        Start
+      </Link>
+
+      <Link to='/language' className='btn_back'>
+        Back
+      </Link>
     </div>
   );
 };
+
+
 
 export default Succes;
