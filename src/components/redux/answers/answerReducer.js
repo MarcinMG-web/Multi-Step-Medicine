@@ -1,8 +1,10 @@
-import {ADD_ANSWERS_THERAPY} from './asnwersTypes';
-const { ADD_ANSWERS_GENDER } = require('./asnwersTypes');
-const { ADD_ANSWERS_OLD } = require('./asnwersTypes');
-const { ADD_ANSWERS_ISSUE } = require('./asnwersTypes');
-const { ADD_ANSWERS_LANGUAGE } = require('./asnwersTypes');
+import {
+  ADD_ANSWERS_THERAPY,
+  ADD_ANSWERS_GENDER,
+  ADD_ANSWERS_OLD,
+  ADD_ANSWERS_ISSUE,
+  ADD_ANSWERS_LANGUAGE,
+} from './asnwersTypes';
 
 const intialState = {
   therapy: '',
@@ -15,13 +17,19 @@ const intialState = {
 
 // Reducer
 const answerReducer = (state = intialState, action) => {
-    switch(action.type) {
-        case ADD_ANSWERS_THERAPY:
-            return {
-                ...state,
-                therapy: action.payload,
-            }
-        default: return state
+    switch (action.type) {
+      case ADD_ANSWERS_THERAPY:
+        return {
+          ...state,
+          therapy: action.payload,
+        };
+      case ADD_ANSWERS_GENDER:
+        return {
+          ...state,
+          gender: action.payload,
+        };
+      default:
+        return state;
     }      
 }
 

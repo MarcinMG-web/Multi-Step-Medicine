@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { getAllGenders } from '../services/ApiService';
 
+import { addAnswersGender } from '../redux/answers/answersActions'
+import { useDispatch } from 'react-redux';
+
 const Gender = () => {
+  let history = useHistory();
+  const dispatch = useDispatch();
 
   const [questions, setQuestions] = useState([]);
   const [userSetting, setUserSetting] = useState([]);
@@ -18,6 +23,7 @@ const Gender = () => {
   };
 
   const handleChange = (e) => {
+    // setUserSetting(e.target.name);
     setUserSetting({
       ...userSetting,
       [e.target.name]: e.target.checked,
@@ -26,6 +32,10 @@ const Gender = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    dispatch(addAnswersGender(userSetting));
+
+    history.push('./old');
 
   };
 
@@ -58,9 +68,9 @@ const Gender = () => {
                 Back
               </Link>
 
-              <Link  to = './old' type='submit' className='btn_next'>
+              <button  to = './old' type='submit' className='btn_next'>
                 Next
-              </Link>
+              </button>
             </div>
           </form>
         </div>
