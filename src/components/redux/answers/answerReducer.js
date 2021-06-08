@@ -38,6 +38,11 @@ const answerReducer = (state = intialState, action) => {
           ...state,
           issue: action.payload,
         };
+      case ADD_ANSWERS_LANGUAGE:
+        return {
+          ...state,
+          language: action.payload,
+        };
       default:
         return state;
     }      

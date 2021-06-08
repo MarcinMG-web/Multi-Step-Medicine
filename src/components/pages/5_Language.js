@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link,} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
 import { getAllLanguage } from '../services/ApiService';
 
+import { addAnswersLanguage } from '../redux/answers/answersActions';
+import { useDispatch } from 'react-redux';
+
 const Language = () => {
+  let history = useHistory();
+  const dispatch = useDispatch();
 
   const [questions, setQuestions] = useState([]);
-  const [userSetting, setUserSetting] = useState([]);
+  const [userSetting, setUserSetting] = useState('');
 
   useEffect(() => {
     getQuestions();
@@ -17,16 +23,15 @@ const Language = () => {
   };
 
   const handleChange = (e) => {
-    setUserSetting({
-      ...userSetting,
-      [e.target.name]: e.target.checked,
-    });
+    setUserSetting(e.target.name);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    dispatch(addAnswersLanguage(userSetting));
 
+    history.push('./succes');
   };
 
   return (
@@ -59,17 +64,12 @@ const Language = () => {
               </div>
             ))}
             <div className='containerLanguage_buttons'>
-              <Link
-                type='submit'
-                to='/issue'
-                className='btn_back'
-
-              >
+              <Link type='submit' to='/issue' className='btn_back'>
                 Back
               </Link>
-              <Link to='/succes' type='submit' className='btn_next'>
+              <button to='/succes' type='submit' className='btn_next'>
                 Next
-              </Link>
+              </button>
             </div>
           </form>
         </div>
