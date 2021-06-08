@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { getAllGenders } from '../services/ApiService';
 
-import { addAnswersGender } from '../redux/answers/answersActions'
+import { addAnswersGender } from '../redux/answers/answersActions';
 import { useDispatch } from 'react-redux';
 
 const Gender = () => {
@@ -11,7 +11,7 @@ const Gender = () => {
   const dispatch = useDispatch();
 
   const [questions, setQuestions] = useState([]);
-  const [userSetting, setUserSetting] = useState([]);
+  const [userSetting, setUserSetting] = useState('');
 
   useEffect(() => {
     getQuestions();
@@ -23,11 +23,7 @@ const Gender = () => {
   };
 
   const handleChange = (e) => {
-    // setUserSetting(e.target.name);
-    setUserSetting({
-      ...userSetting,
-      [e.target.name]: e.target.checked,
-    });
+    setUserSetting(e.target.name);
   };
 
   const handleSubmit = (e) => {
@@ -36,7 +32,6 @@ const Gender = () => {
     dispatch(addAnswersGender(userSetting));
 
     history.push('./old');
-
   };
 
   return (
@@ -68,7 +63,7 @@ const Gender = () => {
                 Back
               </Link>
 
-              <button  to = './old' type='submit' className='btn_next'>
+              <button to='./old' type='submit' className='btn_next'>
                 Next
               </button>
             </div>

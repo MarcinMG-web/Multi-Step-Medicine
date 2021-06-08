@@ -28,6 +28,11 @@ const answerReducer = (state = intialState, action) => {
           ...state,
           gender: action.payload,
         };
+      case ADD_ANSWERS_OLD:
+        return {
+          ...state,
+          old: action.payload,
+        };
       default:
         return state;
     }      

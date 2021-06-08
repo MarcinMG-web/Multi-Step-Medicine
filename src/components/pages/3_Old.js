@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { getAllYears } from '../services/ApiService';
 
+import { addAnswersOld } from '../redux/answers/answersActions';
+import { useDispatch } from 'react-redux';
+
 const Old = () => {
+  let history = useHistory();
+  const dispatch = useDispatch();
+
   const [questions, setQuestions] = useState([]);
-  const [userSetting, setUserSetting] = useState([]);
+  const [userSetting, setUserSetting] = useState('');
 
   useEffect(() => {
     getQuestions();
@@ -17,14 +23,15 @@ const Old = () => {
   };
 
   const handleChange = (e) => {
-    setUserSetting({
-      ...userSetting,
-      [e.target.name]: e.target.checked,
-    });
+    setUserSetting(e.target.name);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    dispatch(addAnswersOld(userSetting));
+
+    history.push('./issue');
   };
 
   return (
@@ -55,9 +62,9 @@ const Old = () => {
               <Link to='./gender' type='submit' className='btn_back'>
                 Back
               </Link>
-              <Link to='./issue' type='submit' className='btn_next'>
+              <button to='./issue' type='submit' className='btn_next'>
                 Next
-              </Link>
+              </button>
             </div>
           </form>
           <p className='container_text'>
