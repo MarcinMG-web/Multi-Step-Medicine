@@ -7,12 +7,14 @@ const Succes = () => {
   const therapy = useSelector((state) => state.answerReducer.therapy);
   const gender = useSelector((state) => state.answerReducer.gender);
   const old = useSelector((state) => state.answerReducer.old)
+  const issue = useSelector((state) => state.answerReducer.issue)
 
   return (
     <div>
-      <p>therapy:{therapy}</p>
-      <p>gender:{gender}</p>
-      <p>gender:{old}</p>
+      <p>therapy: {therapy}</p>
+      <p>gender: {gender}</p>
+      <p>gender: {old}</p>
+      <p>issue: {issue}</p>
 
       <Link to='/' className='btn_back'>
         Start

@@ -33,6 +33,11 @@ const answerReducer = (state = intialState, action) => {
           ...state,
           old: action.payload,
         };
+      case ADD_ANSWERS_ISSUE:
+        return {
+          ...state,
+          issue: action.payload,
+        };
       default:
         return state;
     }      

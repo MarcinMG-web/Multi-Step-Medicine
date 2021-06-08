@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { getAllIssue } from '../services/ApiService';
 
+import { addAnswersIssue } from '../redux/answers/answersActions';
+import { useDispatch } from 'react-redux';
 
 const Issue = () => {
-
+  let history = useHistory();
+  const dispatch = useDispatch();
 
   const [questions, setQuestions] = useState([]);
-  const [userSetting, setUserSetting] = useState([]);
+  const [userSetting, setUserSetting] = useState('');
 
   useEffect(() => {
     getQuestions();
@@ -20,15 +23,15 @@ const Issue = () => {
   };
 
   const handleChange = (e) => {
-    setUserSetting({
-      ...userSetting,
-      [e.target.name]: e.target.checked,
-    });
+    setUserSetting(e.target.name);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    dispatch(addAnswersIssue(userSetting));
+
+    history.push('./language');
   };
 
   return (
@@ -63,9 +66,9 @@ const Issue = () => {
               <Link type='submit' className='btn_back' to='./old'>
                 Back
               </Link>
-              <Link to='./language' type='submit' className='btn_next'>
+              <button to='./language' type='submit' className='btn_next'>
                 Next
-              </Link>
+              </button>
             </div>
           </form>
         </div>
