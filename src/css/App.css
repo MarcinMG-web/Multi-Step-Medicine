@@ -30,7 +30,7 @@
   text-align: center;
   margin: 10px;
   padding: 10px;
-  border-bottom: chocolate 1px solid;
+  border-bottom: #eb731d 1px solid;
 }
 .container_text {
   font-size: 16px;
@@ -77,7 +77,7 @@
   align-items: center;
   text-align: center;
   padding: 10px;
-  border-bottom: chocolate 1px solid;
+  border-bottom: #eb731d 1px solid;
 }
 .containerIssue_text {
   font-size: 20px;
@@ -127,7 +127,7 @@
   align-items: center;
   text-align: center;
   padding: 10px;
-  border-bottom: chocolate 1px solid;
+  border-bottom: #eb731d 1px solid;
 }
 .containerLanguage_text {
   font-size: 20px;
@@ -154,9 +154,9 @@
   align-items: center;
   text-align: center;
   background-color: #fff;
+  border: 2px solid #1fa5e4;
   font-size: 16px;
   margin: 0;
-  padding: 0;
 }
 .containerListOfTherapist_box {
   width: 60vw;
@@ -169,12 +169,15 @@
   border: 1px solid black;
   width: 150px;
   height: 150px;
+  padding: 10px;
+  margin: 10px;
 }
 .containerListOfTherapist_box-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 .containerListOfTherapist_box2 {
   width: 60vw;
@@ -201,9 +204,12 @@
 }
 .containerListOfTherapist_box2-capabilities {
   display: flex;
-  width: 200px;
+  width: 250px;
   flex-direction: column;
   border-left: 1px solid black;
+}
+.containerListOfTherapist_box2-capabilities-text {
+  margin: 10px;
 }
 .containerListOfTherapist_buttons {
   margin-top: 20px;
@@ -214,7 +220,33 @@
   text-align: center;
 }
 
-.btn, .btn_next, .btn_back {
+.containerSucces {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #1fa5e4;
+  font-size: 26px;
+}
+.containerSucces-header {
+  display: flex;
+}
+.containerSucces-results-single {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.containerSucces-buttons {
+  display: flex;
+}
+
+.btn, .btn_startSearchAgain, .btn_changed, .btn_next, .btn_back {
   width: 100px;
   height: 45px;
   display: flex;
@@ -236,6 +268,18 @@
 .btn_next {
   background-color: rgba(120, 236, 236, 0.808);
   color: #fff;
+}
+
+.btn_changed {
+  font-size: 12px;
+  background-color: rgba(68, 121, 71, 0.616);
+  color: #fff;
+}
+
+.btn_startSearchAgain {
+  width: 200px;
+  color: #fff;
+  background-color: #eb731d;
 }
 
 * {

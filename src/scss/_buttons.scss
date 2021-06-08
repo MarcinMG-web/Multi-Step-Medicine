@@ -26,3 +26,17 @@
   background-color: $button-background-backnext;
   color: $button-color-next;
 }
+
+.btn_changed {
+  @extend .btn;
+  font-size: 12px;
+  background-color: $button-background-changed;
+  color: $button-color-next;
+}
+
+.btn_startSearchAgain {
+  @extend .btn;
+  width: 200px;
+  color: $button-color-next;
+  background-color: $button-background-startSearchAgain;
+}
