@@ -52,6 +52,7 @@ const Therapy = () => {
                 <div className='container_question-input'>
                   <input
                     type='checkbox'
+                    
                     name={question.type}
                     value={question.checked}
                     checked={question.checked}
