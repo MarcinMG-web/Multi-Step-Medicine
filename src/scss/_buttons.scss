@@ -1,4 +1,4 @@
-@import './variatables';
+@import './variables';
 
 .btn {
   width: 100px;
@@ -23,7 +23,7 @@
 .btn_next {
   @extend .btn;
 
-  background-color: $button-background-backnext;
+  background-color: $button-background-next;
   color: $button-color-next;
 }
 

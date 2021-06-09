@@ -6,15 +6,13 @@ import Gender from './components/pages/2_Gender';
 import Old from './components/pages/3_Old';
 import Issue from './components/pages/4_Issue';
 import Language from './components/pages/5_Language';
-
-import Succes from './components/pages/Succes';
+import Success from './components/pages/Success';
 
 function App() {
   return (
     <Router>
       <div className='App'>
         <Switch>
-
           <Route exact path='/'>
             <Therapy />
           </Route>
@@ -30,9 +28,8 @@ function App() {
           <Route path='/language'>
             <Language />
           </Route>
-
-          <Route path='/succes'>
-            <Succes />
+          <Route path='/success'>
+            <Success />
           </Route>
         </Switch>
       </div>

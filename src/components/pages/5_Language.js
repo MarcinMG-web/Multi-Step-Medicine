@@ -31,7 +31,7 @@ const Language = () => {
 
     dispatch(addAnswersLanguage(userSetting));
 
-    history.push('./succes');
+    history.push('./success');
   };
 
   return (
@@ -40,8 +40,7 @@ const Language = () => {
         <div className='containerLanguage_text'>
           Language of therapy
           <p className='containerLanguage_text-small'>
-            Choose at least one languageor more if you need multi-lingual
-            therapist
+            Choose at least one language more if you need multi-lingual therapist
           </p>
         </div>
         <div className='containerLanguage_main'>
@@ -67,7 +66,7 @@ const Language = () => {
               <Link type='submit' to='/issue' className='btn_back'>
                 Back
               </Link>
-              <button to='/succes' type='submit' className='btn_next'>
+              <button to='/success' type='submit' className='btn_next'>
                 Next
               </button>
             </div>

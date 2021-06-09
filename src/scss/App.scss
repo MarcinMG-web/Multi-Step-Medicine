@@ -1,9 +1,8 @@
-@import './variatables';
+@import './variables';
 @import './TherapyGenderOld';
 @import './Issue';
 @import './Language';
-@import './ListOfTherapist.scss';
-@import './Sucsses.scss';
+@import './Sucssess.scss';
 @import './buttons';
 
 * {
@@ -13,7 +12,7 @@
 }
 
 .App {
-  background-color: $bacground-color;
+  background-color: $background-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
