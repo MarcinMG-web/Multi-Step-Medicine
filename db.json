@@ -20,7 +20,7 @@
   "gender": [
     {
       "id": 1,
-      "type": "Famale",
+      "type": "Female",
       "completed": false
     },
     {
@@ -71,22 +71,22 @@
     },
     {
       "id": 4,
-      "type": "anxiecty dificultnes",
+      "type": "anciently difficulties",
       "completed": false
     },
     {
       "id": 5,
-      "type": "dificultnes in relationship",
+      "type": "difficulties in relationship",
       "completed": false
     },
     {
       "id": 6,
-      "type": "profesional difficulties",
+      "type": "professional difficulties",
       "completed": false
     },
     {
       "id": 7,
-      "type": "addictional",
+      "type": "additional",
       "completed": false
     },
     {
@@ -121,7 +121,7 @@
     },
     {
       "id": 14,
-      "type": "agression",
+      "type": "aggression",
       "completed": false
     },
     {
@@ -136,7 +136,7 @@
     },
     {
       "id": 17,
-      "type": "self-agression",
+      "type": "self-aggression",
       "completed": false
     },
     {
@@ -166,7 +166,7 @@
     },
     {
       "id": 23,
-      "type": "violance",
+      "type": "violence",
       "completed": false
     },
     {
@@ -224,7 +224,7 @@
     },
     {
       "id": 10,
-      "type": "Portuguase",
+      "type": "Portuguese",
       "completed": false
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "id": 12,
-      "type": "Chech",
+      "type": "Check",
       "completed": false
     },
     {

@@ -1,8 +1,10 @@
-import { ADD_ANSWERS_THERAPY } from './asnwersTypes';
-import { ADD_ANSWERS_GENDER } from './asnwersTypes';
-import { ADD_ANSWERS_OLD } from './asnwersTypes';
-import { ADD_ANSWERS_ISSUE } from './asnwersTypes';
-import { ADD_ANSWERS_LANGUAGE } from './asnwersTypes';
+import {
+  ADD_ANSWERS_THERAPY,
+  ADD_ANSWERS_GENDER,
+  ADD_ANSWERS_OLD,
+  ADD_ANSWERS_ISSUE,
+  ADD_ANSWERS_LANGUAGE,
+} from './answersTypes';
 
 // ACTIONS creators - object
 export const addAnswersTherapy = (answer) => {

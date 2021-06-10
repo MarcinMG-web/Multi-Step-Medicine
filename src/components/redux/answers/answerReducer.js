@@ -4,9 +4,9 @@ import {
   ADD_ANSWERS_OLD,
   ADD_ANSWERS_ISSUE,
   ADD_ANSWERS_LANGUAGE,
-} from './asnwersTypes';
-
-const intialState = {
+} from './answersTypes';
+ 
+const initialState = {
   therapy: '',
   gender: '',
   old: '',
@@ -14,9 +14,8 @@ const intialState = {
   language: '',
 };
 
-
 // Reducer
-const answerReducer = (state = intialState, action) => {
+const answerReducer = (state = initialState, action) => {
     switch (action.type) {
       case ADD_ANSWERS_THERAPY:
         return {
