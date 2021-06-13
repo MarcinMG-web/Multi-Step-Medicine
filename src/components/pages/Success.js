@@ -17,7 +17,7 @@ const Success = () => {
       <div className='containerSuccess-results'>
         <div className='containerSuccess-results-single'>
           <p>therapy: {therapy}</p>
-          <Link to='/' className='btn_changed'>
+          <Link to='./' className='btn_changed'>
             Change issues
           </Link>
         </div>

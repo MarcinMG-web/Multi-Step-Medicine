@@ -28,7 +28,7 @@ const Issue = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     dispatch(addAnswersIssue(userSetting));
 
     history.push('./language');
@@ -38,7 +38,7 @@ const Issue = () => {
     <div>
       <div className='containerIssue'>
         <div className='containerIssue_text'>
-          What best describeswhat you are struggling with?
+          What best describes what you are struggling with?
           <p className='containerIssue_text-small'>
             Choose at last one option.
           </p>
@@ -55,8 +55,7 @@ const Issue = () => {
                   <input
                     type='checkbox'
                     name={question.type}
-                    value={question.checked}
-                    checked={question.checked}
+                    value={question.completed}
                     onChange={handleChange}
                   />
                 </div>

@@ -51,8 +51,7 @@ const Gender = () => {
                   <input
                     type='checkbox'
                     name={question.type}
-                    value={question.checked}
-                    checked={question.checked}
+                    value={question.completed}
                     onChange={handleChange}
                   />
                 </div>
