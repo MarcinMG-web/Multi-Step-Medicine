@@ -37,14 +37,16 @@ const Success = () => {
         </div>
 
         <div className='containerSuccess-results-single'>
-          <p>issue: {issue}</p>
+          <p>issue:</p>
+          <p>{issue}</p>
           <Link to='/issue' className='btn_changed'>
             Change issue
           </Link>
         </div>
 
         <div className='containerSuccess-results-single'>
-          <p>language: {language}</p>
+          <p>language:</p>
+          <p>{language}</p>
           <Link to='/language' className='btn_changed'>
             Change language
           </Link>
