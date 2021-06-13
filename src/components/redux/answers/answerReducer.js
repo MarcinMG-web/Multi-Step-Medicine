@@ -35,12 +35,12 @@ const answerReducer = (state = initialState, action) => {
       case ADD_ANSWERS_ISSUE:
         return {
           ...state,
-          issue: action.payload,
+          issue: action.payload.join(', '),
         };
       case ADD_ANSWERS_LANGUAGE:
         return {
           ...state,
-          language: action.payload,
+          language: action.payload.join(', '),
         };
       default:
         return state;

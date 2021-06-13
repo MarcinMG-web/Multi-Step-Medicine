@@ -23,7 +23,7 @@ const Language = () => {
   };
 
   const handleChange = (e) => {
-    setUserSetting(e.target.name);
+    setUserSetting([...userSetting, e.target.name]);
   };
 
   const handleSubmit = (e) => {
